@@ -4,6 +4,8 @@ import argparse
 import getpass
 
 key_size = 32
+
+# Initialization Vector. Set your own IV if needed.
 iv = 'penpineapplepen!'.encode('utf-8')
 
 def create_key(p_key):
@@ -49,7 +51,7 @@ def decrypt_from_file(data_file_path, output_data_file_name, password):
     return decrypt(byte, password, output_file=output_data_file_name)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Offset value simulation')
+    parser = argparse.ArgumentParser(description='Crypto file')
     parser.add_argument('input_file', metavar="INPUT_FILE", type=str,  default=None,
                         help='Input file')
     parser.add_argument('output_file', metavar="OUTPUT_FILE", type=str,  default=None,
